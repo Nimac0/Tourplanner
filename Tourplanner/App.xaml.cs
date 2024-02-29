@@ -10,5 +10,5 @@ namespace Tourplanner
     public partial class App : Application
     {
     }
-
+/// Ploiesti
 }
