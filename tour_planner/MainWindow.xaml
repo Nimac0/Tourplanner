@@ -1,0 +1,363 @@
+﻿<Window x:Class="tour_planner.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:tour_planner"
+        Width="984"
+        Height="600"
+        BorderBrush="#FF6D6D6D"
+        BorderThickness="1,1,1,1"
+        ResizeMode="NoResize"
+        Title="Tour Planner"
+        WindowStyle="None"
+        mc:Ignorable="d">
+    <Window.Resources>
+        <Style x:Key="DataGridHeaderStyle"
+           TargetType="{x:Type DataGridColumnHeader}">
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="BorderBrush" Value="Lime" />
+            <Setter Property="Background" Value="LimeGreen" />
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="Height" Value="30" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+        </Style>
+        <Style x:Key="DataGridCellStyle"
+           TargetType="{x:Type DataGridCell}">
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="BorderBrush" Value="Lime" />
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="Background" Value="White" />
+        </Style>
+    </Window.Resources>
+    <Grid Width="977" Height="923" Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300" />
+            <ColumnDefinition Width="640" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <TextBlock Margin="0,0,215.66666666666669,25.66666666666667"
+               HorizontalAlignment="Stretch"
+               VerticalAlignment="Stretch"
+               FontFamily="Tahoma"
+               FontSize="18"
+               FontWeight="Medium"
+               Foreground="#FF6D6D6D"
+               Text="Tour Planner"
+               Grid.Column="0"
+               Grid.Row="0"
+               Grid.RowSpan="2" />
+        <Button Content="_"
+            Width="27.333333333333332"
+            Margin="547.6666666666667,0.6666666666666572,0,35.33333333333334"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Stretch"
+            RenderTransformOrigin="0.5,0.5"
+            Grid.Column="1"
+            Grid.Row="0"
+            Grid.RowSpan="2" />
+        <Button Content="[]"
+            Width="27.333333333333332"
+            Margin="0,0.6666666666666572,47.66666666666663,35.33333333333334"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Stretch"
+            RenderTransformOrigin="0.5,0.5"
+            Grid.Column="1"
+            Grid.Row="0"
+            Grid.RowSpan="2" />
+        <Button Content="X"
+            Width="27.333333333333332"
+            Margin="0,0.6666666666666572,11.666666666666629,35.33333333333334"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Stretch"
+            RenderTransformOrigin="0.5488,0.8226"
+            Grid.Column="1"
+            Grid.Row="0"
+            Grid.RowSpan="2" />
+        <StackPanel Margin="0,0.33333333333333215,4.666666666666515,0"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                Orientation="Horizontal"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                Grid.Row="1"
+                Grid.RowSpan="1">
+            <Button Content="File"
+              Width="162"
+              Height="26"
+              Margin="0,0,0,0"
+              Background="{x:Null}"
+              BorderBrush="#FFA3A3A3"
+              FontFamily="Tahoma"
+              FontSize="16"
+              Foreground="#FF6D6D6D"
+              Grid.Column="1" />
+            <Button Content="Edit"
+              Width="162"
+              Height="26"
+              Margin="0,0,0,0"
+              Background="{x:Null}"
+              BorderBrush="#FFA3A36D"
+              FontFamily="Tahoma"
+              FontSize="16"
+              Foreground="#FF6D6D6D"
+              Grid.Column="1" />
+            <Button Content="Options"
+              Width="162"
+              Height="26"
+              Margin="0,0,0,0"
+              Background="{x:Null}"
+              BorderBrush="#FFA3A36D"
+              FontFamily="Tahoma"
+              FontSize="16"
+              Foreground="#FF6D6D6D"
+              Grid.Column="1" />
+            <Button Content=""
+              Width="162"
+              Height="26"
+              Margin="0,0,0,0"
+              Background="{x:Null}"
+              BorderBrush="#FFA3A36D"
+              FontFamily="Tahoma"
+              FontSize="16"
+              Foreground="#FF6D6D6D"
+              Grid.Column="1" />
+            <Button Content=""
+              Width="162"
+              Height="26"
+              Margin="0,0,0,0"
+              Background="{x:Null}"
+              BorderBrush="#FFA3A36D"
+              FontFamily="Tahoma"
+              FontSize="16"
+              Foreground="#FF6D6D6D"
+              Grid.Column="1" />
+            <Button Content="Help"
+              Width="162"
+              Height="26"
+              Margin="0,0,0,0"
+              Background="{x:Null}"
+              BorderBrush="#FFA3A36D"
+              FontFamily="Tahoma"
+              FontSize="16"
+              Foreground="#FF6D6D6D"
+              Grid.Column="1" />
+        </StackPanel>
+        <StackPanel Margin="0,0.33333333333333215,4.666666666666515,0"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Top"
+                Orientation="Horizontal"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                Grid.Row="2"
+                Grid.RowSpan="1">
+            <TextBox x:Name="SearchTextBox" TextChanged="SearchTextBox_TextChanged" Width="914" Height="21" Margin="0,5,5,5" Grid.Column="0"/>
+            <TextBlock x:Name="PlaceholderTextBlock" 
+               Text="Search..." 
+               IsHitTestVisible="False" 
+               Foreground="Gray" 
+               Margin="-915,5,0,0"
+               Grid.Column="0"
+               Visibility="Visible"/>
+            <Button Content="Search"
+              Width="47"
+              Height="21"
+              Margin="5"
+              Grid.Column="1">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Grid>
+                                        <Image Source="pack://application:,,,/tour_planner;component/imgs/search.png" Visibility="Visible"/>
+                                        <Image Source="pack://application:,,,/tour_planner;component/imgs/search_hover.png" Visibility="Collapsed" x:Name="HoverImage"/>
+                                    </Grid>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="HoverImage" Property="Visibility" Value="Visible"/>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+            </Button>
+        </StackPanel>
+        <Border Margin="0,27,659.6666666666667,1.3333333333333712"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            BorderThickness="1"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Grid.Row="2">
+            <DockPanel>
+                <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                    <TextBlock Width="197"
+                     Height="27"
+                     Margin="5"
+                     Background="{x:Null}"
+                     FontFamily="Tahoma"
+                     FontSize="16"
+                     Foreground="#FF6D6D6D"
+                     Text="Tours" />
+                    <Button Content="+"
+                  Width="27"
+                  Height="27"
+                  Margin="5"
+                  Background="#FF008CFF"
+                  ClickMode="Press"
+                  FontFamily="Tahoma"
+                  FontSize="16"
+                  Foreground="White" />
+                    <Button Content="-"
+                  Width="27"
+                  Height="27"
+                  Margin="5"
+                  Background="#FF008CFF"
+                  ClickMode="Press"
+                  FontFamily="Tahoma"
+                  FontSize="16"
+                  Foreground="White" />
+                    <Button Content="..."
+                  Width="27"
+                  Height="27"
+                  Margin="5"
+                  Background="#FF0081EA"
+                  ClickMode="Press"
+                  FontFamily="Tahoma"
+                  FontSize="16"
+                  Foreground="White" />
+                </StackPanel>
+                <ListBox x:Name="listTourItems" Margin="10">
+                    <ListBoxItem Content="Wienerwald" IsSelected="True" />
+                    <ListBoxItem Content="Dopplerhütte" />
+                    <ListBoxItem Content="Figlwalte" />
+                    <ListBoxItem Content="Dorfrunde" />
+                </ListBox>
+            </DockPanel>
+        </Border>
+        <Border Margin="0.3333333333333144,25.33333333333333,9.666666666666742,-0.33333333333337123"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            BorderThickness="0,1"
+            Grid.Column="1"
+            Grid.Row="2">
+            <StackPanel VerticalAlignment="Top" Orientation="Vertical">
+                <TabControl Margin="5">
+                    <TabItem Width="100"
+                   Height="22"
+                   Margin="0,-2,0,0"
+                   VerticalAlignment="Bottom"
+                   Header="General">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="110*" />
+                                <ColumnDefinition Width="110*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="2*" />
+                                <RowDefinition Height="1*" />
+                                <RowDefinition Height="1*" />
+                                <RowDefinition Height="1*" />
+                            </Grid.RowDefinitions>
+                        </Grid>
+                    </TabItem>
+                    <TabItem Width="80" Header="Route">
+                        <Image x:Name="RutaImg" Height="300" Stretch="UniformToFill" />
+                    </TabItem>
+                    <TabItem Width="100"
+                   Height="22"
+                   Margin="0,-2,0,0"
+                   VerticalAlignment="Bottom"
+                   Header="Misc">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="110*" />
+                                <ColumnDefinition Width="110*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="2*" />
+                                <RowDefinition Height="1*" />
+                                <RowDefinition Height="1*" />
+                                <RowDefinition Height="1*" />
+                            </Grid.RowDefinitions>
+                        </Grid>
+                    </TabItem>
+                </TabControl>
+                <StackPanel VerticalAlignment="Stretch"
+                    Orientation="Horizontal">
+                    <TextBlock Width="532"
+                     Height="27"
+                     Margin="5"
+                     FontFamily="Tahoma"
+                     FontSize="16"
+                     Foreground="#FF6D6D6D"
+                     Text="Tour Logs" />
+                    <Button Content="+"
+                  Width="27"
+                  Height="27"
+                  Margin="5"
+                  Background="#FF008CFF"
+                  ClickMode="Press"
+                  FontFamily="Tahoma"
+                  FontSize="16"
+                  Foreground="White" />
+                    <Button Content="-"
+                  Width="27"
+                  Height="27"
+                  Margin="5"
+                  Background="#FF008CFF"
+                  ClickMode="Press"
+                  FontFamily="Tahoma"
+                  FontSize="16"
+                  Foreground="White" />
+                    <Button Content="..."
+                  Width="27"
+                  Height="27"
+                  Margin="5"
+                  Background="#FF0081EA"
+                  ClickMode="Press"
+                  FontFamily="Tahoma"
+                  FontSize="16"
+                  Foreground="White" />
+                </StackPanel>
+                <DataGrid x:Name="MyDataGrid"
+                  Width="617"
+                  AlternatingRowBackground="#FFFFE0"
+                  AutoGenerateColumns="False"
+                  CellStyle="{StaticResource DataGridCellStyle}"
+                  ColumnHeaderHeight="30"
+                  ColumnHeaderStyle="{StaticResource DataGridHeaderStyle}"
+                  
+                  HeadersVisibility="Column"
+                  HorizontalGridLinesBrush="LightGreen"
+                  RowBackground="#FFFFE0"
+                  VerticalGridLinesBrush="LightGreen">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Width="*"
+                                Binding="{Binding Date}"
+                                Header="Date" />
+                        <DataGridTextColumn Width="*"
+                                Binding="{Binding Duration}"
+                                Header="Duration" />
+                        <DataGridTextColumn Width="*"
+                                Binding="{Binding Distance}"
+                                Header="Distance" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
+        </Border>
+    </Grid>
+    <Window.InputBindings>
+        <KeyBinding Command="{Binding ExitAppCommand}" Gesture="Ctrl+Q" />
+    </Window.InputBindings>
+</Window>
