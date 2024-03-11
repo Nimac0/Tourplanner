@@ -43,7 +43,7 @@
             <ColumnDefinition Width="640" />
             <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
-        <TextBlock Margin="0,0,215.66666666666669,25.66666666666667"
+        <TextBlock Margin="0,0,215,25"
                HorizontalAlignment="Stretch"
                VerticalAlignment="Stretch"
                FontFamily="Tahoma"
@@ -55,8 +55,8 @@
                Grid.Row="0"
                Grid.RowSpan="2" />
         <Button Content="_"
-            Width="27.333333333333332"
-            Margin="547.6666666666667,0.6666666666666572,0,35.33333333333334"
+            Width="27"
+            Margin="547,0,0,35"
             HorizontalAlignment="Left"
             VerticalAlignment="Stretch"
             RenderTransformOrigin="0.5,0.5"
@@ -64,8 +64,8 @@
             Grid.Row="0"
             Grid.RowSpan="2" />
         <Button Content="[]"
-            Width="27.333333333333332"
-            Margin="0,0.6666666666666572,47.66666666666663,35.33333333333334"
+            Width="27"
+            Margin="0,0,47,35"
             HorizontalAlignment="Right"
             VerticalAlignment="Stretch"
             RenderTransformOrigin="0.5,0.5"
@@ -73,15 +73,15 @@
             Grid.Row="0"
             Grid.RowSpan="2" />
         <Button Content="X"
-            Width="27.333333333333332"
-            Margin="0,0.6666666666666572,11.666666666666629,35.33333333333334"
+            Width="27"
+            Margin="0,0,11,35"
             HorizontalAlignment="Right"
             VerticalAlignment="Stretch"
             RenderTransformOrigin="0.5488,0.8226"
             Grid.Column="1"
             Grid.Row="0"
             Grid.RowSpan="2" />
-        <StackPanel Margin="0,0.33333333333333215,4.666666666666515,0"
+        <StackPanel Margin="0,0,4,0"
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Stretch"
                 Orientation="Horizontal"
@@ -150,7 +150,7 @@
               Foreground="#FF6D6D6D"
               Grid.Column="1" />
         </StackPanel>
-        <StackPanel Margin="0,0.33333333333333215,4.666666666666515,0"
+        <StackPanel Margin="0,0,4,0"
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Top"
                 Orientation="Horizontal"
@@ -192,7 +192,7 @@
                 </Button.Style>
             </Button>
         </StackPanel>
-        <Border Margin="0,27,659.6666666666667,1.3333333333333712"
+        <Border Margin="0,27,659,1"
             HorizontalAlignment="Stretch"
             VerticalAlignment="Stretch"
             BorderThickness="1"
@@ -245,7 +245,7 @@
                 </ListBox>
             </DockPanel>
         </Border>
-        <Border Margin="0.3333333333333144,25.33333333333333,9.666666666666742,-0.33333333333337123"
+        <Border Margin="0,25,9,0"
             HorizontalAlignment="Stretch"
             VerticalAlignment="Stretch"
             BorderThickness="0,1"
