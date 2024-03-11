@@ -5,8 +5,67 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Tourplanner"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow"
+        Width="Auto" Height="Auto" SizeToContent="WidthAndHeight" d:DesignHeight="389.804" d:DesignWidth="594.673">
+    <Grid HorizontalAlignment="Stretch">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
+        <Label Grid.Row="0" Grid.ColumnSpan="4" VerticalAlignment="Top" Content="TOURPLANNER"/>
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="3" HorizontalAlignment="Right">
+            <Button VerticalAlignment="Center" Content="-"/>
+            <Button VerticalAlignment="Center" Content="o"/>
+            <Button VerticalAlignment="Center" Content="X"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="3" HorizontalAlignment="Right">
+            <Button VerticalAlignment="Center" Content="-"/>
+            <Button VerticalAlignment="Center" Content="o"/>
+            <Button VerticalAlignment="Center" Content="X"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="5" Orientation="Horizontal">
+            <Button VerticalAlignment="Top" Content="FILE"/>
+            <Button VerticalAlignment="Top" Content="EDIT"/>
+            <Button VerticalAlignment="Top" Content="OPTIONS"/>
+        </StackPanel>
+
+        <Button Grid.Row="1" Grid.Column="5" VerticalAlignment="Top" HorizontalAlignment="Right" Content="HELP"/>
+        <TextBox Grid.Row="2" Grid.ColumnSpan="5" Text="Search"/>
+
+        <Grid Grid.Row="3" Grid.ColumnSpan="6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Label Content="TOURS" Grid.Row="0" Grid.Column="0"/>
+            <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5">
+                <Button Content="+"/>
+                <Button Content="-"/>
+                <Button Content="..."/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.ColumnSpan="3">
+                <Button Content="GENERAL"/>
+                <Button Content="ROUTE"/>
+                <Button Content="MISC"/>
+            </StackPanel>
+
+
+        </Grid>
     </Grid>
 </Window>
