@@ -64,8 +64,13 @@
                 <Button Content="ROUTE"/>
                 <Button Content="MISC"/>
             </StackPanel>
-
-
+            <ListBox Grid.Column="0" Grid.Row="1" ItemsSource="{Binding TournameList}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding}"/>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
         </Grid>
     </Grid>
 </Window>
