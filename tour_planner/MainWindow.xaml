@@ -209,15 +209,16 @@
                      FontSize="16"
                      Foreground="#FF6D6D6D"
                      Text="Tours" />
-                    <Button Content="+"
-                  Width="27"
-                  Height="27"
-                  Margin="5"
-                  Background="#FF008CFF"
-                  ClickMode="Press"
-                  FontFamily="Tahoma"
-                  FontSize="16"
-                  Foreground="White" />
+                    <Button Content="+"       
+                    Command="{Binding AddTour}"
+                    Width="27"
+                    Height="27"
+                    Margin="5"
+                    Background="#FF008CFF"
+                    ClickMode="Press"
+                    FontFamily="Tahoma"
+                    FontSize="16"
+                    Foreground="White" />
                     <Button Content="-"
                   Width="27"
                   Height="27"
@@ -237,11 +238,12 @@
                   FontSize="16"
                   Foreground="White" />
                 </StackPanel>
-                <ListBox x:Name="listTourItems" Margin="10">
-                    <ListBoxItem Content="Wienerwald" IsSelected="True" />
-                    <ListBoxItem Content="Dopplerhütte" />
-                    <ListBoxItem Content="Figlwalte" />
-                    <ListBoxItem Content="Dorfrunde" />
+                <ListBox Grid.Column="0" Grid.Row="1" ItemsSource="{Binding TourNameList}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding}"/>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
                 </ListBox>
             </DockPanel>
         </Border>
@@ -303,14 +305,14 @@
                      Foreground="#FF6D6D6D"
                      Text="Tour Logs" />
                     <Button Content="+"
-                  Width="27"
-                  Height="27"
-                  Margin="5"
-                  Background="#FF008CFF"
-                  ClickMode="Press"
-                  FontFamily="Tahoma"
-                  FontSize="16"
-                  Foreground="White" />
+                    Width="27"
+                    Height="27"
+                    Margin="5"
+                    Background="#FF008CFF"
+                    ClickMode="Press"
+                    FontFamily="Tahoma"
+                    FontSize="16"
+                    Foreground="White" />
                     <Button Content="-"
                   Width="27"
                   Height="27"
@@ -337,7 +339,7 @@
                   CellStyle="{StaticResource DataGridCellStyle}"
                   ColumnHeaderHeight="30"
                   ColumnHeaderStyle="{StaticResource DataGridHeaderStyle}"
-                  
+                  ItemsSource="{Binding TourLogList}"
                   HeadersVisibility="Column"
                   HorizontalGridLinesBrush="LightGreen"
                   RowBackground="#FFFFE0"
