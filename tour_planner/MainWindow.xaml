@@ -220,25 +220,27 @@
                     FontSize="16"
                     Foreground="White" />
                     <Button Content="-"
-                  Width="27"
-                  Height="27"
-                  Margin="5"
-                  Background="#FF008CFF"
-                  ClickMode="Press"
-                  FontFamily="Tahoma"
-                  FontSize="16"
-                  Foreground="White" />
+                    Command="{Binding DeleteTour}"
+                    Width="27"
+                    Height="27"
+                    Margin="5"
+                    Background="#FF008CFF"
+                    ClickMode="Press"
+                    FontFamily="Tahoma"
+                    FontSize="16"
+                    Foreground="White" />   
                     <Button Content="..."
-                  Width="27"
-                  Height="27"
-                  Margin="5"
-                  Background="#FF0081EA"
-                  ClickMode="Press"
-                  FontFamily="Tahoma"
-                  FontSize="16"
-                  Foreground="White" />
+                    Command="{Binding ModifyTour}"
+                    Width="27"
+                    Height="27"
+                    Margin="5"
+                    Background="#FF0081EA"
+                    ClickMode="Press"
+                    FontFamily="Tahoma"
+                    FontSize="16"
+                    Foreground="White" />
                 </StackPanel>
-                <ListBox Grid.Column="0" Grid.Row="1" ItemsSource="{Binding TourNameList}">
+                <ListBox Grid.Column="0" Grid.Row="1" ItemsSource="{Binding TourNameList}" SelectedItem="{Binding SelectedTour, Mode=TwoWay}">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding}"/>
