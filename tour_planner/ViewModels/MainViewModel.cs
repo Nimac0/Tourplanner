@@ -40,16 +40,6 @@ namespace tour_planner.ViewModels
                 OnPropertyChanged("TourList");
             }
         }
-        ObservableCollection<string> tourNameList = new ObservableCollection<string> { };
-        public ObservableCollection<string> TourNameList
-        {
-            get => tourNameList;
-            set
-            {
-                tourNameList = value;
-                OnPropertyChanged("TourNameList");
-            }
-        }
 
         ObservableCollection<TourLog> tourLogList = new ObservableCollection<TourLog> { };
         public ObservableCollection<TourLog> TourLogList
@@ -62,17 +52,13 @@ namespace tour_planner.ViewModels
             }
         }
 
-        private string selectedTour;
-        public string SelectedTour
+        private TourInfo selectedTour;
+        public TourInfo SelectedTour
         {
             get { return selectedTour; }
             set
             {
                 selectedTour = value;
-                //if (selectedTour != null)
-                    //TourLogList = new ObservableCollection<TourLog>(selectedTour.Tourlogs);
-                //else
-                    //TourLogList = null;
                 OnPropertyChanged("SelectedTour");
             }
         }
@@ -95,7 +81,6 @@ namespace tour_planner.ViewModels
             {
                 foreach (TourInfo item in e.NewItems)
                 {
-                    TourNameList.Add(item.Name);
                     //TourLogList.Add(item.Tourlogs);
                 }
             }
@@ -103,8 +88,7 @@ namespace tour_planner.ViewModels
             {
                 foreach (TourInfo item in e.OldItems)
                 {
-                    TourNameList.Remove(TourNameList.Where(i => i == item.Name).Single());
-                    //TourLogList.Add(item.Tourlogs);
+                    //TourLogList.Remove(TourLogList.Where(i => i.id == item.id).Single());
                 }
             }
         }
@@ -133,7 +117,7 @@ namespace tour_planner.ViewModels
         {
             if (SelectedTour != null && TourList.Count() != 0)
             {
-               TourList.Remove(TourList.Where(i => i.Name == SelectedTour).Single());
+               TourList.Remove(SelectedTour);
             }
         }
 

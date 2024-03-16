@@ -240,13 +240,13 @@
                     FontSize="16"
                     Foreground="White" />
                 </StackPanel>
-                <ListBox Grid.Column="0" Grid.Row="1" ItemsSource="{Binding TourNameList}" SelectedItem="{Binding SelectedTour, Mode=TwoWay}">
-                    <ListBox.ItemTemplate>
+                <ListView Grid.Column="0" Grid.Row="1" ItemsSource="{Binding TourList}" SelectedItem="{Binding SelectedTour, Mode=TwoWay}">
+                    <ListView.ItemTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding}"/>
+                            <TextBlock Text="{Binding Name}"/>
                         </DataTemplate>
-                    </ListBox.ItemTemplate>
-                </ListBox>
+                    </ListView.ItemTemplate>
+                </ListView>
             </DockPanel>
         </Border>
         <Border Margin="0,25,9,0"
@@ -338,10 +338,11 @@
                   Width="617"
                   AlternatingRowBackground="#FFFFE0"
                   AutoGenerateColumns="False"
+                  CanUserAddRows="False"
                   CellStyle="{StaticResource DataGridCellStyle}"
                   ColumnHeaderHeight="30"
                   ColumnHeaderStyle="{StaticResource DataGridHeaderStyle}"
-                  ItemsSource="{Binding TourLogList}"
+                  ItemsSource="{Binding SelectedTour.Tourlogs}"
                   HeadersVisibility="Column"
                   HorizontalGridLinesBrush="LightGreen"
                   RowBackground="#FFFFE0"
