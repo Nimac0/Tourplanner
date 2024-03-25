@@ -210,6 +210,7 @@
                      Foreground="#FF6D6D6D"
                      Text="Tours" />
                     <Button Content="+"
+                  Click="Tours_CreateButton_Click"
                   Width="27"
                   Height="27"
                   Margin="5"
@@ -219,6 +220,7 @@
                   FontSize="16"
                   Foreground="White" />
                     <Button Content="-"
+                  Click="Tours_DeleteButton_Click"          
                   Width="27"
                   Height="27"
                   Margin="5"
@@ -228,6 +230,7 @@
                   FontSize="16"
                   Foreground="White" />
                     <Button Content="..."
+                  Click="Tours_UpdateButton_Click"               
                   Width="27"
                   Height="27"
                   Margin="5"
@@ -303,6 +306,7 @@
                      Foreground="#FF6D6D6D"
                      Text="Tour Logs" />
                     <Button Content="+"
+                  Click="ToursLog_CreateButton_Click"          
                   Width="27"
                   Height="27"
                   Margin="5"
@@ -312,6 +316,7 @@
                   FontSize="16"
                   Foreground="White" />
                     <Button Content="-"
+                  Click="ToursLog_CreateButton_Click"              
                   Width="27"
                   Height="27"
                   Margin="5"
@@ -321,6 +326,7 @@
                   FontSize="16"
                   Foreground="White" />
                     <Button Content="..."
+                  Click="ToursLog_CreateButton_Click"             
                   Width="27"
                   Height="27"
                   Margin="5"
@@ -354,6 +360,11 @@
                                 Header="Distance" />
                     </DataGrid.Columns>
                 </DataGrid>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0">
+                    <TextBox x:Name="DateTextBox" Width="100" Margin="5"/>
+                    <TextBox x:Name="DurationTextBox" Width="100" Margin="5"/>
+                    <TextBox x:Name="DistanceTextBox" Width="100" Margin="5"/>
+                </StackPanel>
             </StackPanel>
         </Border>
     </Grid>
