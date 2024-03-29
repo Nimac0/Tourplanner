@@ -99,15 +99,36 @@ namespace tour_planner.ViewModels
             {
                 Id = IdCounter,
                 Name = "TestValue1",
-                PictureFilePath = "test1",
+                Description = "this is a description",
+                ModeOfTransportation = "Bike",
                 Tourlogs = new List<TourLog>
                 {
                     new TourLog
                     {
                         Date = "testvalues1",
                         Duration = "testduration1",
-                        Distance = "testdistance1"
+                        Distance = "testdistance1",
+                        Difficulty = "Easy",
+                        Rating = "5/5",
+                        Comment = "this is a comment"
+                    },
+                    new TourLog
+                    {
+                        Date = "testvalues1",
+                        Duration = "testduration1",
+                        Distance = "testdistance1",
+                        Difficulty = "Easy",
+                        Rating = "5/5",
+                        Comment = "this is a comment"
                     }
+                },
+                RouteInfo = new RouteInfo
+                {
+                    From = "test",
+                    To = "test2",
+                    Distance = "test",
+                    EstimateTime = "test",
+                    PictureFilePath = "test"
                 }
             });
             IdCounter++;
