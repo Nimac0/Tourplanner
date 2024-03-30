@@ -10,6 +10,7 @@ namespace tour_planner
         {
             InitializeComponent();
             DataContext = new ViewModels.MainViewModel();
+
         }
         private void SearchTextBox_TextChanged(object sender, RoutedEventArgs e)
         {
