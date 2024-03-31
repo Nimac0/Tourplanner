@@ -4,35 +4,50 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:tour_planner"
-        Width="984"
-        Height="600"
+        xmlns:UC="clr-namespace:tour_planner.UserControls"
+        Width="Auto"
+        Height="Auto"
+        SizeToContent="WidthAndHeight"
         BorderBrush="#FF6D6D6D"
         BorderThickness="1,1,1,1"
-        ResizeMode="NoResize"
         Title="Tour Planner"
         WindowStyle="None"
         mc:Ignorable="d">
     <Window.Resources>
         <Style x:Key="DataGridHeaderStyle"
-           TargetType="{x:Type DataGridColumnHeader}">
-            <Setter Property="BorderThickness" Value="1" />
-            <Setter Property="BorderBrush" Value="Lime" />
-            <Setter Property="Background" Value="LimeGreen" />
-            <Setter Property="Foreground" Value="Black" />
-            <Setter Property="Height" Value="30" />
-            <Setter Property="FontSize" Value="14" />
-            <Setter Property="FontWeight" Value="Bold" />
-            <Setter Property="HorizontalContentAlignment" Value="Center" />
+               TargetType="{x:Type DataGridColumnHeader}">
+            <Setter Property="BorderThickness"
+                    Value="1" />
+            <Setter Property="BorderBrush"
+                    Value="Lime" />
+            <Setter Property="Background"
+                    Value="LimeGreen" />
+            <Setter Property="Foreground"
+                    Value="Black" />
+            <Setter Property="Height"
+                    Value="30" />
+            <Setter Property="FontSize"
+                    Value="14" />
+            <Setter Property="FontWeight"
+                    Value="Bold" />
+            <Setter Property="HorizontalContentAlignment"
+                    Value="Center" />
         </Style>
         <Style x:Key="DataGridCellStyle"
-           TargetType="{x:Type DataGridCell}">
-            <Setter Property="BorderThickness" Value="1" />
-            <Setter Property="BorderBrush" Value="Lime" />
-            <Setter Property="Foreground" Value="Black" />
-            <Setter Property="Background" Value="White" />
+               TargetType="{x:Type DataGridCell}">
+            <Setter Property="BorderThickness"
+                    Value="1" />
+            <Setter Property="BorderBrush"
+                    Value="Lime" />
+            <Setter Property="Foreground"
+                    Value="Black" />
+            <Setter Property="Background"
+                    Value="White" />
         </Style>
     </Window.Resources>
-    <Grid Width="977" Height="923" Margin="5">
+    <Grid Width="977"
+          Height="923"
+          Margin="5">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
@@ -44,145 +59,156 @@
             <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
         <TextBlock Margin="0,0,215,25"
-               HorizontalAlignment="Stretch"
-               VerticalAlignment="Stretch"
-               FontFamily="Tahoma"
-               FontSize="18"
-               FontWeight="Medium"
-               Foreground="#FF6D6D6D"
-               Text="Tour Planner"
-               Grid.Column="0"
-               Grid.Row="0"
-               Grid.RowSpan="2" />
+                   HorizontalAlignment="Stretch"
+                   VerticalAlignment="Stretch"
+                   FontFamily="Tahoma"
+                   FontSize="18"
+                   FontWeight="Medium"
+                   Foreground="#FF6D6D6D"
+                   Text="Tour Planner"
+                   Grid.Column="0"
+                   Grid.Row="0"
+                   Grid.RowSpan="2" />
         <Button Content="_"
-            Width="27"
-            Margin="547,0,0,35"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Stretch"
-            RenderTransformOrigin="0.5,0.5"
-            Grid.Column="1"
-            Grid.Row="0"
-            Grid.RowSpan="2" />
-        <Button Content="[]"
-            Width="27"
-            Margin="0,0,47,35"
-            HorizontalAlignment="Right"
-            VerticalAlignment="Stretch"
-            RenderTransformOrigin="0.5,0.5"
-            Grid.Column="1"
-            Grid.Row="0"
-            Grid.RowSpan="2" />
-        <Button Content="X"
-            Width="27"
-            Margin="0,0,11,35"
-            HorizontalAlignment="Right"
-            VerticalAlignment="Stretch"
-            RenderTransformOrigin="0.5488,0.8226"
-            Grid.Column="1"
-            Grid.Row="0"
-            Grid.RowSpan="2" />
-        <StackPanel Margin="0,0,4,0"
-                HorizontalAlignment="Stretch"
+                Width="27"
+                Margin="547,0,0,35"
+                HorizontalAlignment="Left"
                 VerticalAlignment="Stretch"
-                Orientation="Horizontal"
-                Grid.Column="0"
-                Grid.ColumnSpan="3"
-                Grid.Row="1"
-                Grid.RowSpan="1">
+                RenderTransformOrigin="0.5,0.5"
+                Grid.Column="1"
+                Grid.Row="0"
+                Grid.RowSpan="2" />
+        <Button Content="[]"
+                Width="27"
+                Margin="0,0,47,35"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Stretch"
+                RenderTransformOrigin="0.5,0.5"
+                Grid.Column="1"
+                Grid.Row="0"
+                Grid.RowSpan="2" />
+        <Button Content="X"
+                Width="27"
+                Margin="0,0,11,35"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Stretch"
+                RenderTransformOrigin="0.5488,0.8226"
+                Grid.Column="1"
+                Grid.Row="0"
+                Grid.RowSpan="2" />
+        <StackPanel Margin="0,0,4,0"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    Orientation="Horizontal"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="3"
+                    Grid.Row="1"
+                    Grid.RowSpan="1">
             <Button Content="File"
-              Width="162"
-              Height="26"
-              Margin="0,0,0,0"
-              Background="{x:Null}"
-              BorderBrush="#FFA3A3A3"
-              FontFamily="Tahoma"
-              FontSize="16"
-              Foreground="#FF6D6D6D"
-              Grid.Column="1" />
+                    Width="162"
+                    Height="26"
+                    Margin="0,0,0,0"
+                    Background="{x:Null}"
+                    BorderBrush="#FFA3A3A3"
+                    FontFamily="Tahoma"
+                    FontSize="16"
+                    Foreground="#FF6D6D6D"
+                    Grid.Column="1" />
             <Button Content="Edit"
-              Width="162"
-              Height="26"
-              Margin="0,0,0,0"
-              Background="{x:Null}"
-              BorderBrush="#FFA3A36D"
-              FontFamily="Tahoma"
-              FontSize="16"
-              Foreground="#FF6D6D6D"
-              Grid.Column="1" />
+                    Width="162"
+                    Height="26"
+                    Margin="0,0,0,0"
+                    Background="{x:Null}"
+                    BorderBrush="#FFA3A36D"
+                    FontFamily="Tahoma"
+                    FontSize="16"
+                    Foreground="#FF6D6D6D"
+                    Grid.Column="1" />
             <Button Content="Options"
-              Width="162"
-              Height="26"
-              Margin="0,0,0,0"
-              Background="{x:Null}"
-              BorderBrush="#FFA3A36D"
-              FontFamily="Tahoma"
-              FontSize="16"
-              Foreground="#FF6D6D6D"
-              Grid.Column="1" />
+                    Width="162"
+                    Height="26"
+                    Margin="0,0,0,0"
+                    Background="{x:Null}"
+                    BorderBrush="#FFA3A36D"
+                    FontFamily="Tahoma"
+                    FontSize="16"
+                    Foreground="#FF6D6D6D"
+                    Grid.Column="1" />
             <Button Content=""
-              Width="162"
-              Height="26"
-              Margin="0,0,0,0"
-              Background="{x:Null}"
-              BorderBrush="#FFA3A36D"
-              FontFamily="Tahoma"
-              FontSize="16"
-              Foreground="#FF6D6D6D"
-              Grid.Column="1" />
+                    Width="162"
+                    Height="26"
+                    Margin="0,0,0,0"
+                    Background="{x:Null}"
+                    BorderBrush="#FFA3A36D"
+                    FontFamily="Tahoma"
+                    FontSize="16"
+                    Foreground="#FF6D6D6D"
+                    Grid.Column="1" />
             <Button Content=""
-              Width="162"
-              Height="26"
-              Margin="0,0,0,0"
-              Background="{x:Null}"
-              BorderBrush="#FFA3A36D"
-              FontFamily="Tahoma"
-              FontSize="16"
-              Foreground="#FF6D6D6D"
-              Grid.Column="1" />
+                    Width="162"
+                    Height="26"
+                    Margin="0,0,0,0"
+                    Background="{x:Null}"
+                    BorderBrush="#FFA3A36D"
+                    FontFamily="Tahoma"
+                    FontSize="16"
+                    Foreground="#FF6D6D6D"
+                    Grid.Column="1" />
             <Button Content="Help"
-              Width="162"
-              Height="26"
-              Margin="0,0,0,0"
-              Background="{x:Null}"
-              BorderBrush="#FFA3A36D"
-              FontFamily="Tahoma"
-              FontSize="16"
-              Foreground="#FF6D6D6D"
-              Grid.Column="1" />
+                    Width="162"
+                    Height="26"
+                    Margin="0,0,0,0"
+                    Background="{x:Null}"
+                    BorderBrush="#FFA3A36D"
+                    FontFamily="Tahoma"
+                    FontSize="16"
+                    Foreground="#FF6D6D6D"
+                    Grid.Column="1" />
         </StackPanel>
         <StackPanel Margin="0,0,4,0"
-                HorizontalAlignment="Stretch"
-                VerticalAlignment="Top"
-                Orientation="Horizontal"
-                Grid.Column="0"
-                Grid.ColumnSpan="3"
-                Grid.Row="2"
-                Grid.RowSpan="1">
-            <TextBox x:Name="SearchTextBox" TextChanged="SearchTextBox_TextChanged" Width="914" Height="21" Margin="0,5,5,5" Grid.Column="0"/>
-            <TextBlock x:Name="PlaceholderTextBlock" 
-               Text="Search..." 
-               IsHitTestVisible="False" 
-               Foreground="Gray" 
-               Margin="-915,5,0,0"
-               Grid.Column="0"
-               Visibility="Visible"/>
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Top"
+                    Orientation="Horizontal"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="3"
+                    Grid.Row="2"
+                    Grid.RowSpan="1">
+            <TextBox x:Name="SearchTextBox"
+                     TextChanged="SearchTextBox_TextChanged"
+                     Width="914"
+                     Height="21"
+                     Margin="0,5,5,5"
+                     Grid.Column="0" />
+            <TextBlock x:Name="PlaceholderTextBlock"
+                       Text="Search..."
+                       IsHitTestVisible="False"
+                       Foreground="Gray"
+                       Margin="-915,5,0,0"
+                       Grid.Column="0"
+                       Visibility="Visible" />
             <Button Content="Search"
-              Width="47"
-              Height="21"
-              Margin="5"
-              Grid.Column="1">
+                    Width="47"
+                    Height="21"
+                    Margin="5"
+                    Grid.Column="1">
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="Template">
                             <Setter.Value>
                                 <ControlTemplate TargetType="Button">
                                     <Grid>
-                                        <Image Source="pack://application:,,,/tour_planner;component/imgs/search.png" Visibility="Visible"/>
-                                        <Image Source="pack://application:,,,/tour_planner;component/imgs/search_hover.png" Visibility="Collapsed" x:Name="HoverImage"/>
+                                        <Image Source="pack://application:,,,/tour_planner;component/imgs/search.png"
+                                               Visibility="Visible" />
+                                        <Image Source="pack://application:,,,/tour_planner;component/imgs/search_hover.png"
+                                               Visibility="Collapsed"
+                                               x:Name="HoverImage" />
                                     </Grid>
                                     <ControlTemplate.Triggers>
-                                        <Trigger Property="IsMouseOver" Value="True">
-                                            <Setter TargetName="HoverImage" Property="Visibility" Value="Visible"/>
+                                        <Trigger Property="IsMouseOver"
+                                                 Value="True">
+                                            <Setter TargetName="HoverImage"
+                                                    Property="Visibility"
+                                                    Value="Visible" />
                                         </Trigger>
                                     </ControlTemplate.Triggers>
                                 </ControlTemplate>
@@ -193,86 +219,118 @@
             </Button>
         </StackPanel>
         <Border Margin="0,27,659,1"
-            HorizontalAlignment="Stretch"
-            VerticalAlignment="Stretch"
-            BorderThickness="1"
-            Grid.Column="0"
-            Grid.ColumnSpan="2"
-            Grid.Row="2">
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                BorderThickness="1"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Grid.Row="2">
             <DockPanel>
-                <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                <StackPanel Orientation="Horizontal"
+                            DockPanel.Dock="Top">
                     <TextBlock Width="197"
-                     Height="27"
-                     Margin="5"
-                     Background="{x:Null}"
-                     FontFamily="Tahoma"
-                     FontSize="16"
-                     Foreground="#FF6D6D6D"
-                     Text="Tours" />
-                    <Button Content="+"       
-                    Command="{Binding AddTour}"
-                    Width="27"
-                    Height="27"
-                    Margin="5"
-                    Background="#FF008CFF"
-                    ClickMode="Press"
-                    FontFamily="Tahoma"
-                    FontSize="16"
-                    Foreground="White" />
+                               Height="27"
+                               Margin="5"
+                               Background="{x:Null}"
+                               FontFamily="Tahoma"
+                               FontSize="16"
+                               Foreground="#FF6D6D6D"
+                               Text="Tours" />
+                    <Button Content="+"
+                            Command="{Binding AddTour}"
+                            Width="27"
+                            Height="27"
+                            Margin="5"
+                            Background="#FF008CFF"
+                            ClickMode="Press"
+                            FontFamily="Tahoma"
+                            FontSize="16"
+                            Foreground="White" />
                     <Button Content="-"
-                    Command="{Binding DeleteTour}"
-                    Width="27"
-                    Height="27"
-                    Margin="5"
-                    Background="#FF008CFF"
-                    ClickMode="Press"
-                    FontFamily="Tahoma"
-                    FontSize="16"
-                    Foreground="White" />   
+                            Command="{Binding DeleteTour}"
+                            Width="27"
+                            Height="27"
+                            Margin="5"
+                            Background="#FF008CFF"
+                            ClickMode="Press"
+                            FontFamily="Tahoma"
+                            FontSize="16"
+                            Foreground="White" />
                     <Button Content="..."
-                    Command="{Binding ModifyTour}"
-                    Width="27"
-                    Height="27"
-                    Margin="5"
-                    Background="#FF0081EA"
-                    ClickMode="Press"
-                    FontFamily="Tahoma"
-                    FontSize="16"
-                    Foreground="White" />
+                            Command="{Binding ModifyTour}"
+                            Width="27"
+                            Height="27"
+                            Margin="5"
+                            Background="#FF0081EA"
+                            ClickMode="Press"
+                            FontFamily="Tahoma"
+                            FontSize="16"
+                            Foreground="White" />
                 </StackPanel>
-                <ListView Grid.Column="0" Grid.Row="1" ItemsSource="{Binding TourList}" SelectedItem="{Binding SelectedTour, Mode=TwoWay}">
+                <ListView Grid.Column="0"
+                          Grid.Row="1"
+                          ItemsSource="{Binding TourList}"
+                          SelectedItem="{Binding SelectedTour, Mode=TwoWay}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding Name}"/>
+                            <TextBlock Text="{Binding Name}" />
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
             </DockPanel>
         </Border>
         <Border Margin="0,25,9,0"
-            HorizontalAlignment="Stretch"
-            VerticalAlignment="Stretch"
-            BorderThickness="0,1"
-            Grid.Column="1"
-            Grid.Row="2">
-            <StackPanel VerticalAlignment="Top" Orientation="Vertical">
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                BorderThickness="0,1"
+                Grid.Column="1"
+                Grid.Row="2">
+            <StackPanel VerticalAlignment="Top"
+                        Orientation="Vertical">
+                <UC:TourInputView 
+                    x:Name="TourInfoInput"
+                    Visibility="{Binding TourInputVisible}"/>
                 <TabControl Margin="5">
                     <TabItem Width="100"
-                   Height="22"
-                   Margin="0,-2,0,0"
-                   VerticalAlignment="Bottom"
-                   Header="General">
-                        <Grid>
+                             Height="22"
+                             Margin="0,-2,0,0"
+                             VerticalAlignment="Bottom"
+                             Header="General">
+                        <Grid Width="617">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="110*" />
-                                <ColumnDefinition Width="110*" />
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="5*" />
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="2*" />
+                                <RowDefinition Height="1*" />
                                 <RowDefinition Height="1*" />
                                 <RowDefinition Height="1*" />
                                 <RowDefinition Height="1*" />
                             </Grid.RowDefinitions>
+
+                            <TextBlock Text="Tourname:"
+                                       FontWeight="Bold"
+                                       Grid.Row="0"
+                                       Grid.Column="0" />
+                            <TextBlock Text="{Binding SelectedTour.Name}"
+                                       TextWrapping="Wrap"
+                                       Grid.Row="0"
+                                       Grid.Column="1" />
+                            <TextBlock Text="Mode of Transportation:"
+                                       FontWeight="Bold"
+                                       Grid.Row="1"
+                                       Grid.Column="0" />
+                            <TextBlock Text="{Binding SelectedTour.ModeOfTransportation}"
+                                       Grid.Row="1"
+                                       Grid.Column="1" />
+                            <TextBlock Text="Description:"
+                                       FontWeight="Bold"
+                                       Grid.Row="2"
+                                       Grid.Column="0" />
+                            <TextBlock Text="{Binding SelectedTour.Description}"
+                                       TextWrapping="Wrap"
+                                       Grid.Row="2"
+                                       Grid.Column="1" />
                         </Grid>
                     </TabItem>
                     <TabItem Width="80" Header="Route">
@@ -296,84 +354,165 @@
                             </Grid.RowDefinitions>
                         </Grid>
                     </TabItem>
+                    <TabItem Width="100"
+                             Height="22"
+                             Margin="0,-2,0,0"
+                             VerticalAlignment="Bottom"
+                             Header="Logs">
+                        <StackPanel>
+                            <StackPanel VerticalAlignment="Stretch"
+                                        Orientation="Horizontal">
+                                <TextBlock Width="509"
+                                           Height="27"
+                                           Margin="5"
+                                           FontFamily="Tahoma"
+                                           FontSize="16"
+                                           Foreground="#FF6D6D6D"
+                                           Text="Tour Logs" />
+                                <Button Content="+"
+                                        Width="27"
+                                        Height="27"
+                                        Margin="5"
+                                        Background="#FF008CFF"
+                                        ClickMode="Press"
+                                        FontFamily="Tahoma"
+                                        FontSize="16"
+                                        Foreground="White" />
+                                <Button Content="-"
+                                        Width="27"
+                                        Height="27"
+                                        Margin="5"
+                                        Background="#FF008CFF"
+                                        ClickMode="Press"
+                                        FontFamily="Tahoma"
+                                        FontSize="16"
+                                        Foreground="White" />
+                                <Button Content="..."
+                                        Width="27"
+                                        Height="27"
+                                        Margin="5"
+                                        Background="#FF0081EA"
+                                        ClickMode="Press"
+                                        FontFamily="Tahoma"
+                                        FontSize="16"
+                                        Foreground="White" />
+                            </StackPanel>
+                            <ListView ItemsSource="{Binding SelectedTour.Tourlogs}">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Border BorderBrush="Black"
+                                                BorderThickness="1">
+                                            <Grid Width="617">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="3*" />
+                                                    <ColumnDefinition Width="3*" />
+                                                    <ColumnDefinition Width="3*" />
+                                                    <ColumnDefinition Width="1*" />
+                                                    <ColumnDefinition Width="1*" />
+                                                </Grid.ColumnDefinitions>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="*" />
+                                                    <RowDefinition Height="*" />
+                                                    <RowDefinition Height="*" />
+                                                </Grid.RowDefinitions>
+                                                <TextBlock Grid.Row="0"
+                                                           Grid.Column="0"
+                                                           FontWeight="Bold"
+                                                           Text="Date" />
+                                                <TextBlock Grid.Row="0"
+                                                           Grid.Column="1"
+                                                           FontWeight="Bold"
+                                                           Text="Duration" />
+                                                <TextBlock Grid.Row="0"
+                                                           Grid.Column="2"
+                                                           FontWeight="Bold"
+                                                           Text="Distance" />
+                                                <TextBlock Grid.Row="0"
+                                                           Grid.Column="3"
+                                                           FontWeight="Bold"
+                                                           Text="Difficulty" />
+                                                <TextBlock Grid.Row="0"
+                                                           Grid.Column="4"
+                                                           FontWeight="Bold"
+                                                           Text="Rating" />
+                                                <TextBlock Grid.Row="1"
+                                                           Grid.Column="0"
+                                                           Text="{Binding Date}" />
+                                                <TextBlock Grid.Row="1"
+                                                           Grid.Column="1"
+                                                           Text="{Binding Duration}" />
+                                                <TextBlock Grid.Row="1"
+                                                           Grid.Column="2"
+                                                           Text="{Binding Distance}" />
+                                                <TextBlock Grid.Row="1"
+                                                           Grid.Column="3"
+                                                           Text="{Binding Difficulty}" />
+                                                <TextBlock Grid.Row="1"
+                                                           Grid.Column="4"
+                                                           Text="{Binding Rating}" />
+                                                <TextBlock Grid.Row="2"
+                                                           Grid.Column="0"
+                                                           FontWeight="Bold"
+                                                           Text="Comment: " />
+                                                <TextBlock Grid.Row="2"
+                                                           Grid.Column="1"
+                                                           Grid.ColumnSpan="3"
+                                                           TextWrapping="Wrap"
+                                                           Text="{Binding Comment}" />
+                                            </Grid>
+                                        </Border>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                            <!--
+                            <DataGrid x:Name="MyDataGrid"
+                                      Width="617"
+                                      AlternatingRowBackground="#FFFFE0"
+                                      AutoGenerateColumns="False"
+                                      CanUserAddRows="False"
+                                      CellStyle="{StaticResource DataGridCellStyle}"
+                                      ColumnHeaderHeight="30"
+                                      ColumnHeaderStyle="{StaticResource DataGridHeaderStyle}"
+                                      ItemsSource="{Binding SelectedTour.Tourlogs}"
+                                      HeadersVisibility="Column"
+                                      HorizontalGridLinesBrush="LightGreen"
+                                      RowBackground="#FFFFE0"
+                                      VerticalGridLinesBrush="LightGreen">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Width="*"
+                                                        Binding="{Binding Date}"
+                                                        Header="Date" />
+                                    <DataGridTextColumn Width="*"
+                                                        Binding="{Binding Duration}"
+                                                        Header="Duration" />
+                                    <DataGridTextColumn Width="*"
+                                                        Binding="{Binding Distance}"
+                                                        Header="Distance" />
+                                    <DataGridTextColumn Width="*"
+                                                        Binding="{Binding Difficulty}"
+                                                        Header="Difficulty" />
+                                    <DataGridTextColumn Width="*"
+                                                        Binding="{Binding Rating}"
+                                                        Header="Rating" />
+                                    <DataGridTemplateColumn Header="Comment">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding Comment}"/>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                </DataGrid.Columns>
+                            </DataGrid>-->
+                        </StackPanel>
+                    </TabItem>
                 </TabControl>
-                <StackPanel VerticalAlignment="Stretch"
-                    Orientation="Horizontal">
-                    
-                    <TextBlock Width="300"
-                     Height="27"
-                     Margin="5"
-                     FontFamily="Tahoma"
-                     FontSize="16"
-                     Foreground="#FF6D6D6D"
-                     Text="Tour Logs" />
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,5,0,0">
-                        <TextBox x:Name="DurationTextBox" Width="100" Margin="5"/>
-                        
-                        <TextBox x:Name="DistanceTextBox" Width="100" Margin="5"/>
-                    </StackPanel>
 
-                    <Button Content="+"
-                    Click="ToursLog_CreateButton_Click"       
-                    Width="27"
-                    Height="27"
-                    Margin="5"
-                    Background="#FF008CFF"
-                    ClickMode="Press"
-                    FontFamily="Tahoma"
-                    FontSize="16"
-                    Foreground="White" />
-                    <Button Content="-"
-                    Click="DeleteButton_Click"
-                  Width="27"
-                  Height="27"
-                  Margin="5"
-                  Background="#FF008CFF"
-                  ClickMode="Press"
-                  FontFamily="Tahoma"
-                  FontSize="16"
-                  Foreground="White" />
-                    <Button Content="..."
-                  Click="OpenWindow"
-                  Width="27"
-                  Height="27"
-                  Margin="5"
-                  Background="#FF0081EA"
-                  ClickMode="Press"
-                  FontFamily="Tahoma"
-                  FontSize="16"
-                  Foreground="White" RenderTransformOrigin="20.346,5.001" />
-                </StackPanel>
-                <DataGrid x:Name="MyDataGrid"
-                  Width="617"
-                  AlternatingRowBackground="#FFFFE0"
-                  AutoGenerateColumns="False"
-                  CanUserAddRows="False"
-                  CellStyle="{StaticResource DataGridCellStyle}"
-                  ColumnHeaderHeight="30"
-                  ColumnHeaderStyle="{StaticResource DataGridHeaderStyle}"
-                  ItemsSource="{Binding SelectedTour.Tourlogs}"
-                  HeadersVisibility="Column"
-                  HorizontalGridLinesBrush="LightGreen"
-                  RowBackground="#FFFFE0"
-                  VerticalGridLinesBrush="LightGreen">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Width="*"
-                                Binding="{Binding Date}"
-                                Header="Date" />
-                        <DataGridTextColumn Width="*"
-                                Binding="{Binding Duration}"
-                                Header="Duration" />
-                        <DataGridTextColumn Width="*"
-                                Binding="{Binding Distance}"
-                                Header="Distance" />
-                    </DataGrid.Columns>
-                </DataGrid>
-                
+
             </StackPanel>
         </Border>
     </Grid>
     <Window.InputBindings>
-        <KeyBinding Command="{Binding ExitAppCommand}" Gesture="Ctrl+Q" />
+        <KeyBinding Command="{Binding ExitAppCommand}"
+                    Gesture="Ctrl+Q" />
     </Window.InputBindings>
 </Window>

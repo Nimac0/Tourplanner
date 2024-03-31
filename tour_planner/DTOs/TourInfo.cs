@@ -10,7 +10,9 @@ namespace tour_planner.DTOs
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public string PictureFilePath { get; set; }
+        public string Description { get; set; }
+        public string ModeOfTransportation { get; set; }
         public List<TourLog> Tourlogs { get; set; }
+        public RouteInfo RouteInfo { get; set; }
     }
 }

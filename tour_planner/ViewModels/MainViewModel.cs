@@ -6,7 +6,9 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
+using System.Xml.Linq;
 using tour_planner.DTOs;
 using tour_planner.Models;
 
@@ -14,7 +16,7 @@ namespace tour_planner.ViewModels
 {
     public class MainViewModel : INotifyPropertyChanged, INotifyCollectionChanged
     {
-        public int IdCounter { get; set; } = 1;
+        
         public ICommand AddTour { get; }
         public ICommand DeleteTour { get; }
         public ICommand ModifyTour { get; }
@@ -25,17 +27,16 @@ namespace tour_planner.ViewModels
             DeleteTour = new RelayCommand<string>(Delete);
             ModifyTour = new RelayCommand<string>(Modify);
 
-            tourList = new ObservableCollection<TourInfo>() { };
-            tourList.CollectionChanged += UpdateTourNameList;
+            Observer.Instance.TourList = new ObservableCollection<TourInfo>() { };
+            Observer.Instance.TourList.CollectionChanged += UpdateTourNameList;
         }
 
-        ObservableCollection<TourInfo> tourList;
         public ObservableCollection<TourInfo> TourList
         {
-            get => tourList;
+            get => Observer.Instance.TourList;
             set
             {
-                tourList = value;
+                Observer.Instance.TourList = value;
                 //UpdateTourNameList();
                 OnPropertyChanged("TourList");
             }
@@ -60,6 +61,20 @@ namespace tour_planner.ViewModels
             {
                 selectedTour = value;
                 OnPropertyChanged("SelectedTour");
+            }
+        }
+
+        //private Visibility tourInputVisible = Visibility.Collapsed;
+        public Visibility TourInputVisible
+        {
+            get {
+                //return tourInputVisible;
+                return Observer.Instance.TourInputVisible;
+            }
+            set
+            {
+                Observer.Instance.TourInputVisible = value;
+                OnPropertyChanged("TourInputVisible");
             }
         }
 
@@ -93,24 +108,25 @@ namespace tour_planner.ViewModels
             }
         }
 
+        public void ConvertInputToTour()
+        {
+
+        }
+
+        public void CalculateDistance()
+        {
+
+        }
+
+        public void CalculateTime()
+        {
+
+        }
+
         public void Add(List<string> placeholder)
         {
-            TourList.Add(new TourInfo
-            {
-                Id = IdCounter,
-                Name = "TestValue1",
-                PictureFilePath = "test1",
-                Tourlogs = new List<TourLog>
-                {
-                    new TourLog
-                    {
-                        Date = DateTime.Now,
-                        Duration = TimeSpan.FromMinutes(30),
-                        Distance = 10
-                    }
-                }
-            });
-            IdCounter++;
+            this.TourInputVisible = Visibility.Visible;
+            
         }
 
         public void Delete(string placeholder)
@@ -123,8 +139,20 @@ namespace tour_planner.ViewModels
 
         public void Modify(string placeholder)
         {
-
+            if (SelectedTour != null && TourList.Count() != 0)
+            {
+                SelectedTour.Name = "TestValue1";
+                SelectedTour.Description = "this is a modified description";
+                SelectedTour.ModeOfTransportation = "Car";
+                SelectedTour.RouteInfo.From = "test";
+                SelectedTour.RouteInfo.To = "test2";
+                SelectedTour.RouteInfo.Distance = "test"; //calculate distance func?
+                SelectedTour.RouteInfo.EstimateTime = "test";
+                SelectedTour.RouteInfo.PictureFilePath = "test";
+            }
         }
+
+        
 
     }
 }

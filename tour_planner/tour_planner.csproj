@@ -55,14 +55,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DTOs\RouteInfo.cs" />
     <Compile Include="DTOs\TourInfo.cs" />
     <Compile Include="DTOs\TourLog.cs" />
     <Compile Include="Models\MainModel.cs" />
+    <Compile Include="UserControls\TourInputView.xaml.cs">
+      <DependentUpon>TourInputView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\IListener.cs" />
     <Compile Include="Update.xaml.cs">
       <DependentUpon>Update.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\RelayCommand.cs" />
+    <Compile Include="ViewModels\TourInputViewModel.cs" />
+    <Compile Include="ViewModels\Observer.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -76,6 +83,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Update.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\TourInputView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
