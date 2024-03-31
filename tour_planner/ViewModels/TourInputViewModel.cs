@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -138,13 +138,14 @@ namespace tour_planner.ViewModels
 
         public void ModifyTourList()
         {
-            TourInfo modifiedTour = Observer.Instance.TourList.ElementAt(Observer.Instance.SelectedTour.Id - 1);
+            TourInfo modifiedTour = Observer.Instance.SelectedTour;
             modifiedTour.Name = this.TourUserInput.Tourname;
             modifiedTour.Description = this.TourUserInput.Description;
             modifiedTour.ModeOfTransportation = this.TourUserInput.Transportation;
             modifiedTour.RouteInfo.From = this.TourUserInput.From;
             modifiedTour.RouteInfo.To = this.TourUserInput.To;
-            int index = Observer.Instance.SelectedTour.Id - 1;
+            TourInfo oldEntry = Observer.Instance.TourList.Where(i => i.Id == modifiedTour.Id).First();
+            int index = Observer.Instance.TourList.IndexOf(oldEntry);
             if (index >= 0 && index < Observer.Instance.TourList.Count)
             {
                 Observer.Instance.TourList[index] = modifiedTour;
