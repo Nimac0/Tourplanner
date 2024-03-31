@@ -136,7 +136,11 @@ namespace tour_planner.ViewModels
                 {
                     Observer.Instance.TourList[index] = modifiedTour;
                 }
+                this.ClearInputFields();
                 this.TourInputVisible = Visibility.Collapsed;
+
+                Observer.Instance.TourList.Add(null);
+                Observer.Instance.TourList.Remove(null);
                 return;
             }
             TourInfo newTour = ConvertInputToTour(this.TourUserInput);

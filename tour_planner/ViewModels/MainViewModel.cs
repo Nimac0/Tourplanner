@@ -28,7 +28,7 @@ namespace tour_planner.ViewModels
             ModifyTour = new RelayCommand<string>(Modify);
 
             Observer.Instance.TourList = new ObservableCollection<TourInfo>() { };
-            Observer.Instance.TourList.CollectionChanged += UpdateTourNameList;
+            Observer.Instance.TourList.CollectionChanged += UpdateTourList;
         }
 
         public ObservableCollection<TourInfo> TourList
@@ -98,7 +98,7 @@ namespace tour_planner.ViewModels
             CollectionChanged?.Invoke(this, e);
         }
 
-        void UpdateTourNameList(object sender, NotifyCollectionChangedEventArgs e)
+        void UpdateTourList(object sender, NotifyCollectionChangedEventArgs e)
         {
             if (e.NewItems != null)
             {

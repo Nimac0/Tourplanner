@@ -30,11 +30,16 @@ namespace tour_planner.ViewModels
             }
         }
 
-        private IListener listener;
+        private List<IListener> listeners = new List<IListener>();
 
         public void registerListener(IListener listener)
         {
-            this.listener = listener;
+            this.listeners.Add(listener);
+        }
+
+        public void notifyAllListeners()
+        {
+            this.listeners.ForEach(listener => listener.OnUpdate());
         }
 
         private Visibility tourInputVisible = Visibility.Collapsed;
@@ -47,7 +52,7 @@ namespace tour_planner.ViewModels
             set
             {
                 this.tourInputVisible = value;
-                this.listener.OnUpdate();
+                this.notifyAllListeners();
             }
         }
         
@@ -61,7 +66,7 @@ namespace tour_planner.ViewModels
             set
             {
                 this.tourList = value;
-                this.listener.OnUpdate();
+                this.notifyAllListeners();
             }
         }
         private TourInfo selectedTour;
@@ -71,7 +76,7 @@ namespace tour_planner.ViewModels
             set
             {
                 selectedTour = value;
-                this.listener.OnUpdate();
+                this.notifyAllListeners();
             }
         }
         private TourInfoInput tourUserInput = new TourInfoInput() { };
@@ -81,7 +86,7 @@ namespace tour_planner.ViewModels
             set
             {
                 tourUserInput = value;
-                this.listener.OnUpdate();
+                this.notifyAllListeners();
             }
         }
     }
