@@ -68,6 +68,10 @@ namespace tour_planner.ViewModels
         {
             foreach (PropertyInfo pi in userInput.GetType().GetProperties())
             {
+                if (pi.PropertyType == null)
+                {
+                    return true;
+                }
                 if (pi.PropertyType == typeof(string))
                 {
                     string value = (string)pi.GetValue(userInput);
@@ -75,12 +79,7 @@ namespace tour_planner.ViewModels
                     {
                         return true;
                     }
-                    return false;
-                }
-                if (pi.PropertyType == null)
-                {
-                    return true;
-                }
+                }   
             }
             return false;
         }
@@ -119,6 +118,7 @@ namespace tour_planner.ViewModels
         {
             if (this.IsAnyNullOrEmpty(this.TourUserInput))
             {
+                this.ClearInputFields();
                 this.TourInputVisible = Visibility.Collapsed;
                 return;
             }
