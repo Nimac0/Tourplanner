@@ -57,6 +57,7 @@
     </ApplicationDefinition>
     <Compile Include="DTOs\RouteInfo.cs" />
     <Compile Include="DTOs\TourInfo.cs" />
+    <Compile Include="DTOs\TourInfoInput.cs" />
     <Compile Include="DTOs\TourLog.cs" />
     <Compile Include="Models\MainModel.cs" />
     <Compile Include="UserControls\TourInputView.xaml.cs">

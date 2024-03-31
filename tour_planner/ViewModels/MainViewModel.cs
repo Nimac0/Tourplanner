@@ -53,18 +53,16 @@ namespace tour_planner.ViewModels
             }
         }
 
-        private TourInfo selectedTour;
         public TourInfo SelectedTour
         {
-            get { return selectedTour; }
+            get { return Observer.Instance.SelectedTour; }
             set
             {
-                selectedTour = value;
+                Observer.Instance.SelectedTour = value;
                 OnPropertyChanged("SelectedTour");
             }
         }
 
-        //private Visibility tourInputVisible = Visibility.Collapsed;
         public Visibility TourInputVisible
         {
             get {
@@ -75,6 +73,16 @@ namespace tour_planner.ViewModels
             {
                 Observer.Instance.TourInputVisible = value;
                 OnPropertyChanged("TourInputVisible");
+            }
+        }
+
+        public TourInfoInput TourUserInput
+        {
+            get { return Observer.Instance.TourUserInput; }
+            set
+            {
+                Observer.Instance.TourUserInput = value;
+                OnPropertyChanged("TourUserInput");
             }
         }
 
@@ -108,25 +116,24 @@ namespace tour_planner.ViewModels
             }
         }
 
-        public void ConvertInputToTour()
+        public void SetDefaultPlaceholder()
         {
-
-        }
-
-        public void CalculateDistance()
-        {
-
-        }
-
-        public void CalculateTime()
-        {
+            TourInfo selectedTour = Observer.Instance.SelectedTour ?? null;
+            Observer.Instance.TourUserInput = new TourInfoInput()
+            {
+                Tourname = selectedTour?.Name ?? string.Empty,
+                Description = selectedTour?.Description ?? string.Empty,
+                Transportation = selectedTour?.ModeOfTransportation ?? string.Empty,
+                From = selectedTour?.RouteInfo.From ?? string.Empty,
+                To = selectedTour?.RouteInfo.To ?? string.Empty,
+                Modify = true
+            };
 
         }
 
         public void Add(List<string> placeholder)
         {
-            this.TourInputVisible = Visibility.Visible;
-            
+            this.TourInputVisible = Visibility.Visible;    
         }
 
         public void Delete(string placeholder)
@@ -141,14 +148,8 @@ namespace tour_planner.ViewModels
         {
             if (SelectedTour != null && TourList.Count() != 0)
             {
-                SelectedTour.Name = "TestValue1";
-                SelectedTour.Description = "this is a modified description";
-                SelectedTour.ModeOfTransportation = "Car";
-                SelectedTour.RouteInfo.From = "test";
-                SelectedTour.RouteInfo.To = "test2";
-                SelectedTour.RouteInfo.Distance = "test"; //calculate distance func?
-                SelectedTour.RouteInfo.EstimateTime = "test";
-                SelectedTour.RouteInfo.PictureFilePath = "test";
+                this.SetDefaultPlaceholder();
+                this.TourInputVisible = Visibility.Visible;    
             }
         }
 

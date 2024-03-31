@@ -64,5 +64,25 @@ namespace tour_planner.ViewModels
                 this.listener.OnUpdate();
             }
         }
+        private TourInfo selectedTour;
+        public TourInfo SelectedTour
+        {
+            get { return selectedTour; }
+            set
+            {
+                selectedTour = value;
+                this.listener.OnUpdate();
+            }
+        }
+        private TourInfoInput tourUserInput = new TourInfoInput() { };
+        public TourInfoInput TourUserInput
+        {
+            get { return tourUserInput; }
+            set
+            {
+                tourUserInput = value;
+                this.listener.OnUpdate();
+            }
+        }
     }
 }

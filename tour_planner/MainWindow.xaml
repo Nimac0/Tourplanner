@@ -496,45 +496,6 @@
                                     </DataTemplate>
                                 </ListView.ItemTemplate>
                             </ListView>
-                            <!--
-                            <DataGrid x:Name="MyDataGrid"
-                                      Width="617"
-                                      AlternatingRowBackground="#FFFFE0"
-                                      AutoGenerateColumns="False"
-                                      CanUserAddRows="False"
-                                      CellStyle="{StaticResource DataGridCellStyle}"
-                                      ColumnHeaderHeight="30"
-                                      ColumnHeaderStyle="{StaticResource DataGridHeaderStyle}"
-                                      ItemsSource="{Binding SelectedTour.Tourlogs}"
-                                      HeadersVisibility="Column"
-                                      HorizontalGridLinesBrush="LightGreen"
-                                      RowBackground="#FFFFE0"
-                                      VerticalGridLinesBrush="LightGreen">
-                                <DataGrid.Columns>
-                                    <DataGridTextColumn Width="*"
-                                                        Binding="{Binding Date}"
-                                                        Header="Date" />
-                                    <DataGridTextColumn Width="*"
-                                                        Binding="{Binding Duration}"
-                                                        Header="Duration" />
-                                    <DataGridTextColumn Width="*"
-                                                        Binding="{Binding Distance}"
-                                                        Header="Distance" />
-                                    <DataGridTextColumn Width="*"
-                                                        Binding="{Binding Difficulty}"
-                                                        Header="Difficulty" />
-                                    <DataGridTextColumn Width="*"
-                                                        Binding="{Binding Rating}"
-                                                        Header="Rating" />
-                                    <DataGridTemplateColumn Header="Comment">
-                                        <DataGridTemplateColumn.CellTemplate>
-                                            <DataTemplate>
-                                                <TextBlock Text="{Binding Comment}"/>
-                                            </DataTemplate>
-                                        </DataGridTemplateColumn.CellTemplate>
-                                    </DataGridTemplateColumn>
-                                </DataGrid.Columns>
-                            </DataGrid>-->
                         </StackPanel>
                     </TabItem>
                 </TabControl>
