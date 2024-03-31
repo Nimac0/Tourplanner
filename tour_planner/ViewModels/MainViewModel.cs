@@ -104,9 +104,9 @@ namespace tour_planner.ViewModels
                 {
                     new TourLog
                     {
-                        Date = "testvalues1",
-                        Duration = "testduration1",
-                        Distance = "testdistance1"
+                        Date = DateTime.Now,
+                        Duration = TimeSpan.FromMinutes(30),
+                        Distance = 10
                     }
                 }
             });

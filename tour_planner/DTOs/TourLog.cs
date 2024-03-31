@@ -8,8 +8,8 @@ namespace tour_planner.DTOs
 {
     public class TourLog
     {
-        public string Date { get; set; }
-        public string Duration { get; set; }
-        public string Distance { get; set; }
+        public DateTime Date { get; set; }
+        public TimeSpan Duration { get; set; }
+        public float Distance { get; set; }
     }
 }

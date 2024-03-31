@@ -299,14 +299,22 @@
                 </TabControl>
                 <StackPanel VerticalAlignment="Stretch"
                     Orientation="Horizontal">
-                    <TextBlock Width="532"
+                    
+                    <TextBlock Width="300"
                      Height="27"
                      Margin="5"
                      FontFamily="Tahoma"
                      FontSize="16"
                      Foreground="#FF6D6D6D"
                      Text="Tour Logs" />
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,5,0,0">
+                        <TextBox x:Name="DurationTextBox" Width="100" Margin="5"/>
+                        
+                        <TextBox x:Name="DistanceTextBox" Width="100" Margin="5"/>
+                    </StackPanel>
+
                     <Button Content="+"
+                    Click="ToursLog_CreateButton_Click"       
                     Width="27"
                     Height="27"
                     Margin="5"
@@ -316,6 +324,7 @@
                     FontSize="16"
                     Foreground="White" />
                     <Button Content="-"
+                    Click="DeleteButton_Click"
                   Width="27"
                   Height="27"
                   Margin="5"
@@ -325,6 +334,7 @@
                   FontSize="16"
                   Foreground="White" />
                     <Button Content="..."
+                  Click="OpenWindow"
                   Width="27"
                   Height="27"
                   Margin="5"
@@ -332,7 +342,7 @@
                   ClickMode="Press"
                   FontFamily="Tahoma"
                   FontSize="16"
-                  Foreground="White" />
+                  Foreground="White" RenderTransformOrigin="20.346,5.001" />
                 </StackPanel>
                 <DataGrid x:Name="MyDataGrid"
                   Width="617"
@@ -359,6 +369,7 @@
                                 Header="Distance" />
                     </DataGrid.Columns>
                 </DataGrid>
+                
             </StackPanel>
         </Border>
     </Grid>
