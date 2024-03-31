@@ -125,22 +125,7 @@ namespace tour_planner.ViewModels
             
             if (this.TourUserInput.Modify)
             {
-                TourInfo modifiedTour = Observer.Instance.TourList.ElementAt(Observer.Instance.SelectedTour.Id - 1);
-                modifiedTour.Name = this.TourUserInput.Tourname;
-                modifiedTour.Description = this.TourUserInput.Description;
-                modifiedTour.ModeOfTransportation = this.TourUserInput.Transportation;
-                modifiedTour.RouteInfo.From = this.TourUserInput.From;
-                modifiedTour.RouteInfo.To = this.TourUserInput.To;
-                int index = Observer.Instance.SelectedTour.Id-1;
-                if (index >= 0 && index < Observer.Instance.TourList.Count)
-                {
-                    Observer.Instance.TourList[index] = modifiedTour;
-                }
-                this.ClearInputFields();
-                this.TourInputVisible = Visibility.Collapsed;
-
-                Observer.Instance.TourList.Add(null);
-                Observer.Instance.TourList.Remove(null);
+                this.ModifyTourList();
                 return;
             }
             TourInfo newTour = ConvertInputToTour(this.TourUserInput);
@@ -149,6 +134,23 @@ namespace tour_planner.ViewModels
             this.ClearInputFields();
             this.TourInputVisible = Visibility.Collapsed;
              
+        }
+
+        public void ModifyTourList()
+        {
+            TourInfo modifiedTour = Observer.Instance.TourList.ElementAt(Observer.Instance.SelectedTour.Id - 1);
+            modifiedTour.Name = this.TourUserInput.Tourname;
+            modifiedTour.Description = this.TourUserInput.Description;
+            modifiedTour.ModeOfTransportation = this.TourUserInput.Transportation;
+            modifiedTour.RouteInfo.From = this.TourUserInput.From;
+            modifiedTour.RouteInfo.To = this.TourUserInput.To;
+            int index = Observer.Instance.SelectedTour.Id - 1;
+            if (index >= 0 && index < Observer.Instance.TourList.Count)
+            {
+                Observer.Instance.TourList[index] = modifiedTour;
+            }
+            this.ClearInputFields();
+            this.TourInputVisible = Visibility.Collapsed;
         }
 
         public void Cancel(string placeholder)
