@@ -61,18 +61,18 @@ namespace tour_planner.ViewModels
                 {
                     new TourLog
                     {
-                        Date = "testvalues1",
-                        Duration = "testduration1",
-                        Distance = "testdistance1",
+                        Date = new DateTime(2023,03,03),
+                        Duration = new TimeSpan(30),
+                        Distance = 2,
                         Difficulty = "Easy",
                         Rating = "5/5",
                         Comment = "this is a comment"
                     },
                     new TourLog
                     {
-                        Date = "testvalues1",
-                        Duration = "testduration1",
-                        Distance = "testdistance1",
+                        Date = new DateTime(2023,03,03),
+                        Duration = new TimeSpan(30),
+                        Distance = 2,
                         Difficulty = "Easy",
                         Rating = "5/5",
                         Comment = "this is a comment"

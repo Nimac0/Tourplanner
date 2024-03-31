@@ -287,9 +287,9 @@
                 Grid.Row="2">
             <StackPanel VerticalAlignment="Top"
                         Orientation="Vertical">
-                <UC:TourInputView 
+                <!--<UC:TourInputView 
                     x:Name="TourInfoInput"
-                    Visibility="{Binding TourInputVisible}"/>
+                    Visibility="{Binding TourInputVisible}"/>-->
                 <TabControl Margin="5">
                     <TabItem Width="100"
                              Height="22"
@@ -464,7 +464,7 @@
                                     </DataTemplate>
                                 </ListView.ItemTemplate>
                             </ListView>
-                            <!--
+                            
                             <DataGrid x:Name="MyDataGrid"
                                       Width="617"
                                       AlternatingRowBackground="#FFFFE0"
@@ -502,7 +502,7 @@
                                         </DataGridTemplateColumn.CellTemplate>
                                     </DataGridTemplateColumn>
                                 </DataGrid.Columns>
-                            </DataGrid>-->
+                            </DataGrid>
                         </StackPanel>
                     </TabItem>
                 </TabControl>
