@@ -286,11 +286,11 @@
                 Grid.Column="1"
                 Grid.Row="2">
             <StackPanel VerticalAlignment="Top"
-                        Orientation="Vertical" Height="317">
+                        Orientation="Vertical">
                 <UC:TourInputView 
                     x:Name="TourInfoInput"
                     Visibility="{Binding TourInputVisible}"/>
-                <TabControl Margin="5" Height="247">
+                <TabControl Margin="5">
                     <TabItem Width="100"
                              Height="22"
                              Margin="0,-2,0,0"
