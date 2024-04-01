@@ -10,7 +10,7 @@ namespace tour_planner.DTOs
     {
         public DateTime Date { get; set; }
         public TimeSpan Duration { get; set; }
-        public float Distance { get; set; }
+        public string Distance { get; set; }
         public string Difficulty { get; set; }
         public string Rating { get; set; }
         public string Comment { get; set; }

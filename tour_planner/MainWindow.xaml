@@ -286,11 +286,11 @@
                 Grid.Column="1"
                 Grid.Row="2">
             <StackPanel VerticalAlignment="Top"
-                        Orientation="Vertical">
+                        Orientation="Vertical" Height="317">
                 <UC:TourInputView 
                     x:Name="TourInfoInput"
                     Visibility="{Binding TourInputVisible}"/>
-                <TabControl Margin="5">
+                <TabControl Margin="5" Height="247">
                     <TabItem Width="100"
                              Height="22"
                              Margin="0,-2,0,0"
@@ -391,7 +391,7 @@
                              Margin="0,-2,0,0"
                              VerticalAlignment="Bottom"
                              Header="Logs">
-                        <StackPanel>
+                        <StackPanel Height="218">
                             <StackPanel VerticalAlignment="Stretch"
                                         Orientation="Horizontal">
                                 <TextBlock Width="509"
@@ -402,6 +402,7 @@
                                            Foreground="#FF6D6D6D"
                                            Text="Tour Logs" />
                                 <Button Content="+"
+                                        Click="ToursLog_CreateButton_Click"
                                         Width="27"
                                         Height="27"
                                         Margin="5"
@@ -411,6 +412,7 @@
                                         FontSize="16"
                                         Foreground="White" />
                                 <Button Content="-"
+                                        Click="ToursLog_DeleteButton_Click"
                                         Width="27"
                                         Height="27"
                                         Margin="5"
@@ -420,6 +422,7 @@
                                         FontSize="16"
                                         Foreground="White" />
                                 <Button Content="..."
+                                        Click="ToursLog_UpdateButton_Click"
                                         Width="27"
                                         Height="27"
                                         Margin="5"
@@ -429,6 +432,7 @@
                                         FontSize="16"
                                         Foreground="White" />
                             </StackPanel>
+
                             <ListView ItemsSource="{Binding SelectedTour.Tourlogs}">
                                 <ListView.ItemTemplate>
                                     <DataTemplate>
@@ -496,7 +500,13 @@
                                     </DataTemplate>
                                 </ListView.ItemTemplate>
                             </ListView>
-                            
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0">
+                                <TextBox x:Name="DurationTextBox" Width="100" Margin="5"/>
+                                <TextBox x:Name="DistanceTextBox" Width="100" Margin="5"/>
+                                <TextBox x:Name="DifficultyTextBox" Width="100" Margin="5"/>
+                                <TextBox x:Name="RatingTextBox" Width="100" Margin="5"/>
+                                <TextBox x:Name="CommentTextBox" Width="100" Margin="5"/>
+                            </StackPanel>
                             <DataGrid x:Name="MyDataGrid"
                                       Width="617"
                                       AlternatingRowBackground="#FFFFE0"
@@ -511,7 +521,7 @@
                                       RowBackground="#FFFFE0"
                                       VerticalGridLinesBrush="LightGreen">
                                 <DataGrid.Columns>
-                                    <DataGridTextColumn Width="*"
+                                    <DataGridTextColumn Width="117"
                                                         Binding="{Binding Date}"
                                                         Header="Date" />
                                     <DataGridTextColumn Width="*"
@@ -535,6 +545,8 @@
                                     </DataGridTemplateColumn>
                                 </DataGrid.Columns>
                             </DataGrid>
+                            
+
                         </StackPanel>
                     </TabItem>
                 </TabControl>
